@@ -19,7 +19,7 @@ it dies.
 In order to make use of this diag rom you will need a logic probe.  Error codes
 (and success code) are determined by probing what address the diag rom stops on.
 
-Please refer to the [address errors](docs/address_errors.md) docs for the
+Please refer to the [error addresses](docs/error_addresses.md) docs for the
 mapping between errors codes and stop addresses.
 
 ## Usage
