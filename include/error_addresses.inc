@@ -1,3 +1,5 @@
+EA_ALL_PASSED		equ	$aaa0
+
 EA_RAM_ADDRESS		equ	$c010
 EA_RAM_DATA		equ	$c030
 EA_RAM_DEAD_OUTPUT	equ	$c070

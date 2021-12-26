@@ -13,17 +13,17 @@ and work your ways backward.
 Address lines that are stuck high should be considered a 1, while pulsing
 address lines should be considered a 0.
 
-|   Hex  |   Binary (A15...A0) | Error |
-|-------:|---------------------|-------|
-| 0x8000 | 1000 0000 0000 0000 | No error, all tests passed |
-| 0xBFF0 | 1011 1111 1111 0000 | Some type of internal fault happened in the diag rom |
-| 0xC010 | 1100 0000 0001 0000 | Ram address error |
-| 0xC030 | 1100 0000 0011 0000 | Ram data error |
-| 0xC070 | 1100 0000 0111 0000 | Ram dead output (not implemented yet) |
-| 0xC0f0 | 1100 0000 1111 0000 | Ram unwriteable |
-| 0xC310 | 1100 0011 0001 0000 | YM2151 already busy (busy flag was set before we even started using YM2151) |
-| 0xC330 | 1100 0011 0011 0000 | YM2151 busy (been stuck in a busy state for to long) |
-| 0xC370 | 1100 0011 0111 0000 | YM2151 timerA didn't generate any firqs |
-| 0xCC10 | 1100 1100 0001 0000 | ADPCM already busy (busy flag was set before we even started using ADPCM) |
-| 0xCC30 | 1100 1100 0011 0000 | ADPCM1 status was idle when we did a quick sound play |
-| 0xCC70 | 1100 1100 0111 0000 | ADPCM1 status was idle when we did a quick sound play |
+|  Hex |   Binary (A15...A0) | Error |
+|-----:|---------------------|-------|
+| a000 | 1010 0000 0000 0000 | Some type of internal fault happened in the diag rom might have happened |
+| aaa0 | 1010 1010 1010 0000 | No errors, all tests passed |
+| c010 | 1100 0000 0001 0000 | Ram address error |
+| c030 | 1100 0000 0011 0000 | Ram data error |
+| c070 | 1100 0000 0111 0000 | Ram dead output (not implemented yet) |
+| c0f0 | 1100 0000 1111 0000 | Ram unwriteable |
+| c310 | 1100 0011 0001 0000 | YM2151 already busy (busy flag was set before we even started using YM2151) |
+| c330 | 1100 0011 0011 0000 | YM2151 busy (been stuck in a busy state for to long) |
+| c370 | 1100 0011 0111 0000 | YM2151 timerA didn't generate any firqs |
+| cc10 | 1100 1100 0001 0000 | ADPCM already busy (busy flag was set before we even started using ADPCM) |
+| cc30 | 1100 1100 0011 0000 | ADPCM1 status was idle when we did a quick sound play |
+| cc70 | 1100 1100 0111 0000 | ADPCM1 status was idle when we did a quick sound play |

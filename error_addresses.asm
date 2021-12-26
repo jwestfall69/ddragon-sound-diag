@@ -1,3 +1,4 @@
 	section errors,"rodata"
 
-	blkw (0x4002/2),0x20fe
+	; fills the errors section with bra to self instructions
+	blkw (0x5ff2/2),0x20fe

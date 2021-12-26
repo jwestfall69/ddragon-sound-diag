@@ -23,4 +23,4 @@ ram_passed:
 		jsr	ym2151_tests
 		jsr	adpcm_tests
 
-		jmp	all_tests_passed
+		jmp	EA_ALL_PASSED

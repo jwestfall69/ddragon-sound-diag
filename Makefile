@@ -1,5 +1,4 @@
 OBJS = obj/adpcm_tests.o \
-       obj/all_tests_passed.o \
        obj/ddragon_sound_diag.o \
        obj/error_addresses.o \
        obj/interrupt_handlers.o \
