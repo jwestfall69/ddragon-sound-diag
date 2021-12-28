@@ -10,6 +10,14 @@
 
 ym2151_tests:
 
+		ldx	#MMIO_YM2151_DATA
+		ldy	#1
+		JRU	memory_dead_output_test
+		tsta
+		beq	.dead_output_passed
+		jmp	EA_YM2151_DEAD_OUTPUT
+	.dead_output_passed:
+
 		jsr	busy_bit_test
 		tsta
 		beq	.busy_bit_passed

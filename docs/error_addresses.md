@@ -24,6 +24,7 @@ address lines should be considered a 0.
 | c310 | 1100 0011 0001 0000 | YM2151 already busy (busy flag was set before we even started using YM2151) |
 | c330 | 1100 0011 0011 0000 | YM2151 busy (been stuck in a busy state for to long) |
 | c370 | 1100 0011 0111 0000 | YM2151 timerA didn't generate any firqs |
+| c3f0 | 1100 0011 1111 0000 | YM2151 dead output reading mmio address |
 | cc10 | 1100 1100 0001 0000 | ADPCM already busy (busy flag was set before we even started using ADPCM) |
 | cc30 | 1100 1100 0011 0000 | ADPCM1 status was idle when we did a quick sound play |
 | cc70 | 1100 1100 0111 0000 | ADPCM1 status was idle when we did a quick sound play |
