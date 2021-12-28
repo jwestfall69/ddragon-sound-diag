@@ -3,12 +3,12 @@
 	include "error_addresses.inc"
 	include "macros.inc"
 
-	global _start
+	global _reset
 	global ram_passed
 
-	section text
+	section reset,"rodata"
 
-_start:
+_reset:
 		; make sure f/irqs are disabled
 		orcc	#$50
 

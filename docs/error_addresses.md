@@ -19,7 +19,7 @@ address lines should be considered a 0.
 | aaa0 | 1010 1010 1010 0000 | No errors, all tests passed |
 | c010 | 1100 0000 0001 0000 | Ram address error |
 | c030 | 1100 0000 0011 0000 | Ram data error |
-| c070 | 1100 0000 0111 0000 | Ram dead output (not implemented yet) |
+| c070 | 1100 0000 0111 0000 | Ram dead output |
 | c0f0 | 1100 0000 1111 0000 | Ram unwriteable |
 | c310 | 1100 0011 0001 0000 | YM2151 already busy (busy flag was set before we even started using YM2151) |
 | c330 | 1100 0011 0011 0000 | YM2151 busy (been stuck in a busy state for to long) |

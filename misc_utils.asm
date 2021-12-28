@@ -5,6 +5,7 @@
 
 	global	debug_value
 	global	delay
+	global	memory_dead_output_test_jru
 	global	ym2151_wait_busy
 
 	section text
@@ -26,6 +27,39 @@ delay:
 		subd	#1	; 3 cycles
 		bne	delay	; 2 cycles
 		rts
+
+; determine if the passed memory region has dead output
+; params:
+;  x = start address
+;  y = length
+; returns:
+; a = (0 = pass, 1 = fail)
+memory_dead_output_test_jru:
+
+	; TOD add internal fault if RESET_LOWER_BYTE != $ffff
+	; which would mean some build or .ld issue
+
+	; the 6809 does dummy memory reads of 0xffff
+	; when its doesnt need to access the address bus.
+	; because of this, reads of memory locations with
+	; no/dead output will cause the register to be filled
+	; with the lower byte of the reset function's address
+	; from the vector table.
+	.loop_next_address:
+		lda	,x+
+		cmpa	#RESET_LOWER_BYTE
+		bne	.test_passed
+
+		leay	-1,y
+		cmpy	#0
+		bne	.loop_next_address
+
+		lda	#1
+		JRU_RETURN
+
+	.test_passed:
+		clra
+		JRU_RETURN
 
 ; wait for the ym2151 busy bit to go away
 ; if it takes too long generate a EA_YM2141_BUSY

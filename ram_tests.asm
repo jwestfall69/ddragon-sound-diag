@@ -8,6 +8,14 @@
 	section	text
 
 ram_tests:
+		ldx	#RAM_START
+		ldy	#RAM_SIZE
+		JRU	memory_dead_output_test
+		tsta
+		beq	.ram_dead_output_passed
+		jmp	EA_RAM_DEAD_OUTPUT
+
+	.ram_dead_output_passed:
 		JRU	ram_writable_test
 		tsta
 		beq	.ram_writable_passed
