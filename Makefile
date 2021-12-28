@@ -2,6 +2,7 @@ OBJS = obj/adpcm_tests.o \
        obj/ddragon_sound_diag.o \
        obj/error_addresses.o \
        obj/interrupt_handlers.o \
+       obj/misc_tests.o \
        obj/misc_utils.o \
        obj/ram_tests.o \
        obj/vector_table.o \

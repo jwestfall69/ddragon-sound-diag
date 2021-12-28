@@ -20,6 +20,7 @@ ram_passed:
 		; init stack pointer now that ram is considered good
 		lds	#((RAM_START + RAM_SIZE) - 1)
 
+		jsr	misc_tests
 		jsr	ym2151_tests
 		jsr	adpcm_tests
 

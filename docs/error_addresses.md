@@ -28,6 +28,7 @@ address lines should be considered a 0.
 | c3f0 | 1100 0011 1111 0000 | YM2151 dead output reading mmio address |
 | c610 | 1100 0110 0001 0000 | Unexpected NMI |
 | c630 | 1100 0110 0011 0000 | Unexpected FIRQ |
+| c670 | 1100 0110 0111 0000 | IC16 (74LS245) dead output |
 | cc10 | 1100 1100 0001 0000 | ADPCM already busy (busy flag was set before we even started using ADPCM) |
 | cc30 | 1100 1100 0011 0000 | ADPCM1 status was idle when we did a quick sound play |
 | cc70 | 1100 1100 0111 0000 | ADPCM1 status was idle when we did a quick sound play |
