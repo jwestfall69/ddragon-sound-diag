@@ -35,24 +35,15 @@ delay:
 ; returns:
 ; a = (0 = pass, 1 = fail)
 memory_dead_output_test_jru:
-
-		; something is wrong with the build process or
-		; the .ld file if these don't match
-		lda	#RESET_LOWER_BYTE
-		cmpa	$ffff
-		beq	.fault_reset_lower_byte_passed
-		jmp	EA_FAULT_RESET_LOWER_BYTE
-	.fault_reset_lower_byte_passed:
-
 	; the 6809 does dummy memory reads of 0xffff
 	; when its doesnt need to access the address bus.
 	; because of this, reads of memory locations with
 	; no/dead output will cause the register to be filled
 	; with the lower byte of the reset function's address
 	; from the vector table.
+		lda	$ffff
 	.loop_next_address:
-		lda	,x+
-		cmpa	#RESET_LOWER_BYTE
+		cmpa	,x+
 		bne	.test_passed
 
 		leay	-1,y

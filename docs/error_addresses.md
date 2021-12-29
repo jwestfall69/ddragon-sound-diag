@@ -17,7 +17,6 @@ address lines should be considered a 0.
 |-----:|---------------------|-------|
 | a000 | 1010 0000 0000 0000 | Shouldn't happen, but likely means a crash in the diag rom |
 | aaa0 | 1010 1010 1010 0000 | No errors, all tests passed |
-| b010 | 1011 0000 0001 0000 | Reset lower byte fault (diag rom issue) |
 | c010 | 1100 0000 0001 0000 | Ram address error |
 | c030 | 1100 0000 0011 0000 | Ram data error |
 | c070 | 1100 0000 0111 0000 | Ram dead output |
