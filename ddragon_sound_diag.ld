@@ -1,6 +1,6 @@
 MEMORY {
-  RESET: org=0x8000, len=0x100
-  PRG: org=0x8100, len=0x1f00
+  RESET: org=0x8000, len=0x5d
+  MAIN: org=0x805d, len=0x1fa3
   ERR: org=0xa000, len=0x5ff2
   VEC: org=0xfff2, len=0xe
 }
@@ -11,9 +11,9 @@ SECTIONS {
     RESERVE(0x5a);
     *(reset)
   } >RESET
-  .prg: {
+  .main: {
     *(text)
-  } >PRG
+  } >MAIN
   .errs: {
     *(errors)
   } >ERR

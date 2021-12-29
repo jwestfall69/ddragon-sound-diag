@@ -3,10 +3,16 @@
 	include "error_addresses.inc"
 	include "macros.inc"
 
+	global handle_reset
 	global handle_firq
 	global handle_irq
 	global handle_nmi
 	global handle_swi
+
+	section reset,"rodata"
+
+handle_reset:
+		jmp	main
 
 	section text
 
